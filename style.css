@@ -1,0 +1,117 @@
+:root {
+  /* COLORS */
+
+  --white: #dddddd;
+  --black: #333333;
+  --gray: #4b4b4b;
+  --light-gray: #999999;
+  --pink: #ff15e6;
+  --orange: #ff793f;
+  --green: #41bb74;
+  --red: #db5353;
+
+  /* FONTS */
+
+  --main-font: "Montserrat";
+}
+
+/* BODY */
+
+body {
+  background: var(--white);
+  font-family: var(--main-font);
+}
+
+/* NAVIGATION */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.nav-links {
+  display: none;
+}
+
+.list-button {
+  transform: scale(2);
+}
+
+/* HERO */
+
+.hero-banner {
+  text-align: left;
+  width: auto;
+  height: 400px;
+  padding: 30px;
+  background-image: url(assets/graphic.png);
+  background-position: 175px -50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-banner h5 {
+  color: var(--pink);
+  font-size: 15px;
+}
+
+.hero-title {
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.hero-text {
+  font-size: 18px;
+}
+
+/* GRADIENT BUTTON */
+
+.gradient-button-wrapper {
+  height: 100px;
+  width: 203px;
+}
+
+.gradient-button {
+  font-weight: 600;
+  padding: 20px 60px;
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 30px;
+  background: linear-gradient(to right, var(--pink), var(--orange), var(--red));
+  cursor: pointer;
+  z-index: 1;
+}
+
+.gradient-button::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+  left: 3px;
+  background-color: var(--white);
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.gradient-button::after {
+  content: attr(data);
+  font-size: 16px;
+}
+
+/* FREE NFT BANNER */
+
+.free-nft-bg {
+  height: 300px;
+  display: flex;
+  justify-content: ;
+  background-image: url(assets/background.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 130% cover;
+}
