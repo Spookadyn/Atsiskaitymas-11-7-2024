@@ -20,6 +20,9 @@
 body {
   background: var(--white);
   font-family: var(--main-font);
+  max-width: 100%;
+  height: auto;
+  overflow-x: hidden;
 }
 
 /* NAVIGATION */
@@ -42,16 +45,22 @@ body {
 
 /* HERO */
 
-.hero-banner {
+.hero-banner,
+.footer-banner {
   text-align: left;
-  width: auto;
-  height: 400px;
+  width: 100%;
+  height: 60vh;
   padding: 30px;
-  background-image: url(assets/graphic.png);
-  background-position: 175px -50px;
-  background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
+}
+
+.hero-banner {
+  background-image: url(assets/graphic.png);
+  background-position: 180px -50px;
+  background-size: cover;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .hero-banner h5 {
@@ -107,11 +116,364 @@ body {
 /* FREE NFT BANNER */
 
 .free-nft-bg {
-  height: 300px;
+  height: 320px;
   display: flex;
-  justify-content: ;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   background-image: url(assets/background.svg);
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: -480px;
   background-size: 130% cover;
+}
+
+.free-nft-title,
+.free-nft-text,
+.auction-title,
+.auction-text {
+  margin: 20px;
+}
+
+.free-nft-title,
+.auction-title {
+  font-size: 40px;
+}
+
+.free-nft-text,
+.auction-text {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* COMPANY-NAMES */
+
+.company-names {
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: 2fr;
+  gap: 15px;
+  list-style: none;
+  padding: 10px;
+  margin: 50px 10px 50px 10px;
+}
+
+.company-names li a img {
+  width: 40vw;
+  height: 8vh;
+  text-align: center;
+}
+
+.company-container-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.company-container-2 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.company-container-3 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.company-container-4 {
+  display: none;
+}
+
+.company-container-5 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* AUCTION */
+
+.auction-info {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.auction-text a {
+  color: var(--black);
+}
+
+/* CARDS */
+
+.nft-cards {
+  width: calc(100% - 20px);
+  height: 400px;
+  margin: 50px 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.nft-card {
+  width: 250px;
+  height: 380px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--light-gray);
+  flex: 0 0 auto;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-series {
+  font-size: 0.8rem;
+  color: var(--orange);
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin: 8px 0;
+  color: var(--black);
+}
+
+.card-id {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.eth {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.time {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+}
+
+/* FOOTER  */
+
+.footer-banner {
+  background-image: url(/assets/upsell-footer-image.svg);
+  background-size: 40%;
+  background-position: 320px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.footer-left {
+  margin-top: 50px;
+}
+
+.footer-info {
+  margin: 10px;
+  color: var(--gray);
+}
+
+.footer-right {
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: 2fr;
+  margin: 30px auto 30px auto;
+}
+
+.footer-right div {
+  width: 50vw;
+}
+
+.footer-right div ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.nft {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.contact {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.social {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.copyright-release {
+  color: var(--light-gray);
+  margin: 10px;
+}
+
+.release {
+  display: none;
+}
+
+@media (min-width: 992px) and (max-width: 1920px) {
+  /* NAVIGATION */
+
+  .nav-links {
+    display: inline-block;
+    margin: 2vw;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    margin: 1vw;
+    font-weight: 500;
+    color: var(--black);
+  }
+
+  .nav-links a:last-of-type {
+    color: var(--pink);
+  }
+
+  .list-button {
+    display: none;
+  }
+
+  /* HERO */
+
+  .hero-banner {
+    background-image: url(assets/graphic.png);
+    background-position: right;
+    background-size: contain;
+  }
+
+  .hero-title {
+    font-size: 60px;
+    font-weight: 800;
+    margin: 25px 0;
+  }
+
+  .hero-text br:nth-of-type(1),
+  .hero-text br:nth-of-type(3) {
+    display: none;
+  }
+
+  /* FREE-NFT */
+
+  .free-nft-bg {
+    margin: 20px;
+    align-items: flex-start;
+    background-size: 100%;
+    background-position: center;
+    border-radius: 10px;
+  }
+
+  .free-nft-title,
+  .free-nft-text {
+    padding: 0 0 30px 30px;
+  }
+
+  /* COMPANY-NAMES */
+
+  .company-names {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 100px 0 20px 0;
+    gap: 30px;
+  }
+
+  .company-names li a img {
+    width: 80%;
+    height: auto;
+    margin: 0 10px;
+  }
+
+  .company-container-4 {
+    display: initial;
+  }
+
+  /* AUCTION */
+
+  .auction-info {
+    align-items: flex-start;
+  }
+
+  /* CARDS */
+
+  .nft-cards {
+    position: static;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 400px;
+  }
+
+  .nft-card {
+    position: static;
+    width: 250px;
+    height: 380px;
+  }
+
+  .nft-card:nth-child(2) {
+    transform: none;
+  }
+
+  /* FOOTER */
+
+  .footer-banner {
+    background-image: url(/assets/upsell-footer-image.svg);
+    background-size: 12vw;
+    background-position: 80vw;
+  }
+
+  .footer-banner h1 br {
+    display: none;
+  }
+
+  .footer-info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40vw;
+  }
+
+  .footer-right {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .footer-right div {
+    width: 10vw;
+  }
+
+  .copyright-release {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .release {
+    display: initial;
+  }
 }
